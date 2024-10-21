@@ -6,11 +6,11 @@ This is a guide and a bit of code for retrieving Xpeng data from enode.com to be
 
 ## Prerequisites
 
-Xpeng
+### Xpeng
 
 Have your user name and password for your Xpeng account ready.
 
-Enode
+### Enode
 
 All communication with enode.com uses Curl commands which can be issued from the command prompt within Windows - this is also quite effective for initial testing. 
 Alternatively these Curl commands can also be run from Home Asistant from Terminal. 
@@ -35,11 +35,11 @@ Alternatively these Curl commands can also be run from Home Asistant from Termin
    The above is one command! The ^ at the end of each line simply instructs the command prompt to continue input. Enode.com will reply with a link to a landing page that you can click on. The landing page will prompt you to authorize your car being added to this client. You will need your Xpeng user name and password for this!
 
 
-Home Assistant
+### Home Assistant
 
 My solution relies on a Home Assistant installation with both MQTT and Node Red, so ensure that you have both installed and configured.
 
-Next step
+## Next step
 
 After having done all the initial setup steps and being able to receive data from Enode.com just you can download my Node Red flow and import it in Node Red. Remember to replace the YOUR_CLIENT_ID:YOUR_CLIENT_SECRET in the "Update token" Exec Node with your data. If auto-discovery is enabled, the new Xpeng device should automatically pop up in your list of MQTT devices. All the entities should also be visible.
 Everything will update automatically every 5 minutes. Please note that the cars' position is only updated when the car is switched off and not while driving or in neutral.
