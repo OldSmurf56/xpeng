@@ -14,15 +14,16 @@ Alternatively these Curl commands can also be run from Home Asistant from Termin
 2. With your Client ID you can create a Client secret according to this guide: https://developers.enode.com/api/reference#api-credentials.
    Keep your ClientID and Client Secret in a safe place - we will need this later on.
 4. Next step is to retrieve a token. To do this you have to send the following curl command to the enode server at https://oauth.production.enode.io/oauth2/token :
-   curl https://oauth.production.enode.io/oauth2/token -X POST -u ClientID:ClientSecret -d "grant_type=client_credentials" Replace ClientID:ClientSecret with your ID:Secret
+   curl https://oauth.production.enode.io/oauth2/token -X POST -u ClientID:ClientSecret -d "grant_type=client_credentials"
+   Replace ClientID:ClientSecret with your ID:Secret
    The server will reply with a token that will expire after an hour.
 6. Within an hour (or you will have to update your token first) you can add your car to this Client; this is a bit tricky and also involves running Curl commands
    Open a command prompt from within Windows and run the following command:
    curl https://enode-api.production.enode.io/users/c9660583-6f93-463d-8fdf-e87ed352e22e/link -X POST ^
--H "Authorization: Bearer your_access_token" ^
--H "Content-Type: application/json" ^
--d "{ \"vendorType\": \"vehicle\", \"scopes\": [\"vehicle:read:data\", \"vehicle:read:location\", \"vehicle:control:charging\"], \"language\": \"en-US\", \"redirectUri\": \"https://localhost:3000\" }"
-The above is one command! The ^ at the end of each line simply instructs the command prompt to continue input. Enode.com will reply with a link to a landing page that you can click on. The landing page will prompt you to authorize your car being added to this client. You will need your Xpeng user name and password for this!
+   -H "Authorization: Bearer your_access_token" ^
+   -H "Content-Type: application/json" ^
+   -d "{ \"vendorType\": \"vehicle\", \"scopes\": [\"vehicle:read:data\", \"vehicle:read:location\", \"vehicle:control:charging\"], \"language\": \"en-US\", \"redirectUri\": \"https://localhost:3000\" }"
+   The above is one command! The ^ at the end of each line simply instructs the command prompt to continue input. Enode.com will reply with a link to a landing page that you can click on. The landing page will prompt you to authorize your car being added to this client. You will need your Xpeng user name and password for this!
 
 
 Home Assistant
