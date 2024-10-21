@@ -39,7 +39,7 @@ Alternatively these Curl commands can also be run from Home Asistant from Termin
 
 My solution relies on a Home Assistant installation with both MQTT and Node Red, so ensure that you have both installed and configured.
 
-## Next step
+## Next steps
 
 After having done all the initial setup steps and being able to receive data from Enode.com just you can download my Node Red flow and import it in Node Red. Remember to replace the YOUR_CLIENT_ID:YOUR_CLIENT_SECRET in the "Update token" Exec Node with your data. If auto-discovery is enabled, the new Xpeng device should automatically pop up in your list of MQTT devices. All the entities should also be visible.
 Everything will update automatically every 5 minutes. Please note that the cars' position is only updated when the car is switched off and not while driving or in neutral.
