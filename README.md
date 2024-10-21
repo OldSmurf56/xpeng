@@ -13,7 +13,7 @@ Alternatively these Curl commands can also be run from Home Asistant from Termin
    With a bit of luck you will get access to a number of free devices.
 2. With your Client ID you can create a Client secret according to this guide: https://developers.enode.com/api/reference#api-credentials.
    Keep your ClientID and Client Secret in a safe place - we will need this later on.
-4. Next step is to retrieve a token. To do this you have to send the following curl command to the enode server at https://oauth.production.enode.io/oauth2/token and replace ClientID:ClientSecret with your values.
+4. Next step is to retrieve an access token. To do this you have to send the following curl command to the enode server at https://oauth.production.enode.io/oauth2/token and replace ClientID:ClientSecret with your data.
       
    curl https://oauth.production.enode.io/oauth2/token -X POST -u ClientID:ClientSecret -d "grant_type=client_credentials"
 
@@ -33,12 +33,8 @@ Home Assistant
 1. My solution relies on a Home Assistant installation with both MQTT and Node Red. 
 The rest happens within Home Assistant.
 
-Description:
-The way clients communicate with enode.com is by running Curl commands. These can be issued from the command prompt within Windows - this is quite effective for initial testing. Alternatively these Curl commands can also be run from Home Asistant from Terminal. 
-Before initiating any communcations with enode.com, an access token has to be created. This is done by sending the follwoing curl command to the enode server at https://oauth.production.enode.io/oauth2/token :
-curl https://oauth.production.enode.io/oauth2/token -X POST -u clientID:ClientSecret -d "grant_type=client_credentials"
-The server will reply with a token that will expire after 3600 seconds.
-After that you can send a new Curl command containing the token and send it to https://enode-api.production.enode.io
-curl 
+Description
+After having done the initial setup and being able to receive data from Enode.com just a bit of code in Node Red is needed and all data will be available in MQTT. If auto-discovery is enabled, the new Xpeng device should automatically pop up in your list of MQTT devices. All the entities should also be visible.
+
 
 
