@@ -35,7 +35,6 @@ Alternatively these Curl commands can also be run from Home Asistant from Termin
 Home Assistant
 
 My solution relies on a Home Assistant installation with both MQTT and Node Red. 
-The rest happens within Home Assistant.
 
 Description
 
