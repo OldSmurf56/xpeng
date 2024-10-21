@@ -1,6 +1,10 @@
-# xpeng
-Guide to retrieving data from Xpeng cars and publish in Home Assistant
+# Guide to retrieving data from Xpeng cars and publish in Home Assistant
 
+## Overview
+
+This is a guide and a bit of code for retrieving Xpeng data from enode.com to be able to present these in Home Assistant
+
+## Prerequisites
 
 Xpeng
 
