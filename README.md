@@ -2,10 +2,13 @@
 Guide to retrieving data from Xpeng cars and publish in Home Assistant
 
 Prerequisites:
+
 Xpeng
+
 Have your user name and password for your Xpeng account ready.
 
 Enode
+
 All communication with enode.com uses Curl commands which can be issued from the command prompt within Windows - this is also quite effective for initial testing. 
 Alternatively these Curl commands can also be run from Home Asistant from Terminal. 
 1. You will need to create a Developer account on ENODE.COM on https://developers.enode.com/api/reference#introduction.
@@ -30,10 +33,12 @@ Alternatively these Curl commands can also be run from Home Asistant from Termin
 
 
 Home Assistant
+
 My solution relies on a Home Assistant installation with both MQTT and Node Red. 
 The rest happens within Home Assistant.
 
 Description
+
 After having done the initial setup and being able to receive data from Enode.com just a bit of code in Node Red is needed and all data will be available in MQTT. If auto-discovery is enabled, the new Xpeng device should automatically pop up in your list of MQTT devices. All the entities should also be visible.
 
 
