@@ -2,7 +2,13 @@
 
 ## Overview
 
-This is a guide and a bit of code for retrieving Xpeng data from enode.com to be able to present these in Home Assistant
+This is a guide and a bit of code for retrieving Xpeng data from enode.com to be able to present these in Home Assistant. This solution will retrieve all data from the enode server but please note that Xpeng currently doesn't upload all possible fields. For example, odometer data are currently not available. But maybe some day.
+Also note that the cars' position is only updated when the car is switched off and not while driving or in neutral. Everything will update automatically every 5 minutes. 
+
+### Shortcomings
+I have some challenges with plotting the current position on a map - I can't get it working. The position is visible as "latitude, longitude" on the dashboard, but i can't seem to get the cars' position on a map. Any help is welcome
+
+
 
 ## Prerequisites
 
@@ -41,8 +47,8 @@ My solution relies on a Home Assistant installation with both MQTT and Node Red,
 
 ## Next steps
 
-After having done all the initial setup steps and verified that you are able to receive data from Enode.com, you can download my Node Red flow and import it in Node Red. Remember to replace the YOUR_CLIENT_ID:YOUR_CLIENT_SECRET in the "Update token" Exec Node with your data. If auto-discovery is enabled, the new Xpeng device should automatically pop up in your list of MQTT devices. All the entities should also be visible.
-Everything will update automatically every 5 minutes. Please note that the cars' position is only updated when the car is switched off and not while driving or in neutral.
+After having done all the initial setup steps and verified that you are able to receive data from Enode.com, you can download my Node Red flow and import it in Node Red. Remember to replace the YOUR_CLIENT_ID:YOUR_CLIENT_SECRET in the "Update token" Exec Node with your data. If auto-discovery is enabled, the new Xpeng device should automatically pop up in your list of MQTT devices. All the entities should also be visible in the new MQTT device. From there on use the sensors where you need them.
+
 
 
 
