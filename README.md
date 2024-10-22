@@ -7,7 +7,7 @@ Also note that the cars' position is only updated when the car is switched off a
 
 ### Shortcomings
 I have some challenges with plotting the current position on a map - I can't get it working. The position is visible as "latitude, longitude" on the dashboard, but i can't seem to get the cars' position on a map. Any help is welcome
-
+The software solution may look clumsy, but it works :-) Any improvements are welcome.
 
 
 ## Prerequisites
