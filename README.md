@@ -49,7 +49,7 @@ My solution relies on a Home Assistant installation with both MQTT and Node Red,
 
 After having done all the initial setup steps and verified that you are able to receive data from Enode.com, you can download my Node Red flow and import it in Node Red. Remember to replace the YOUR_CLIENT_ID:YOUR_CLIENT_SECRET in the "Update token" Exec Node with your data. If auto-discovery is enabled, the new Xpeng device should automatically pop up in your list of MQTT devices. All the entities should also be visible in the new MQTT device. From there on use the sensors where you need them.
 
-##Changelog
+# Changelog
 V2: Removed QoS and Retain settings in MQTT publish
 
 
