@@ -30,11 +30,11 @@ Alternatively these Curl commands can also be run from Home Asistant from Termin
    curl https://oauth.production.enode.io/oauth2/token -X POST -u ClientID:ClientSecret -d "grant_type=client_credentials"
 
    The server will reply with a token that will expire after an hour.
-6. Within an hour (or you will have to update your token first) you can add your car to this Client; this is a bit tricky and also involves running Curl commands
-   Open a command prompt from within Windows and run the following command and replace your_userID and your_access_token with your data.
+5. Within an hour (or you will have to update your token first) you can add your car to this Client; this is a bit tricky and also involves running Curl commands
+   Open a command prompt from within Windows and run the following command and replace {YOUR_ACCESS_TOKEN} with your data.
 
    curl https://enode-api.production.enode.io/users/your_userID/link -X POST ^
-   -H "Authorization: Bearer your_access_token" ^
+   -H "Authorization: Bearer {YOUR_ACCESS_TOKEN}" ^
    -H "Content-Type: application/json" ^
    -d "{ \"vendorType\": \"vehicle\", \"scopes\": [\"vehicle:read:data\", \"vehicle:read:location\", \"vehicle:control:charging\"], \"language\": \"en-US\", \"redirectUri\": \"https://localhost:3000\" }"
 
