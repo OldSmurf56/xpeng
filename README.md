@@ -31,7 +31,7 @@ Alternatively these Curl commands can also be run from Home Asistant from Termin
 
    The server will reply with a token that will expire after an hour.
 5. Within an hour (or you will have to update your token first) you can add your car to this Client; this is a bit tricky and also involves running Curl commands
-   Open a command prompt from within Windows and run the following command and replace {YOUR_ACCESS_TOKEN} with your data.
+   Open a command prompt from within Windows and run the following command and replace {YOUR_ACCESS_TOKEN} with your current access token.
 
    curl https://enode-api.production.enode.io/users/your_userID/link -X POST ^
    -H "Authorization: Bearer {YOUR_ACCESS_TOKEN}" ^
