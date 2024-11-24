@@ -5,9 +5,23 @@
 This is a guide and a bit of code for retrieving Xpeng data from enode.com to be able to present these in Home Assistant. This solution will retrieve all data from the enode server but please note that Xpeng currently doesn't upload all possible fields. For example, odometer data are currently not available. But maybe some day.
 Also note that the cars' position is only updated when the car is switched off and not while driving or in neutral. Everything will update automatically every 5 minutes. 
 
-### Shortcomings
-I have some challenges with plotting the current position on a map - I can't get it working. The position is visible as "latitude, longitude" on the dashboard, but i can't seem to get the cars' position on a map. Any help is welcome
-The current solution may look clumsy, but it works :-) Any improvements are welcome.
+### Show car location on map
+In order to show the current position of the car on a map you have to create a formatted device tracker in your configuration.yaml. After reloading yaml the new device_tracker can be used to show the car's position.
+Add the following code (all variables names are the ones from the NodeRed code):
+template:
+- sensor:
+    - name: "Xpeng Location Formatted"
+      unique_id: xpeng_location_formatted
+      state: >
+        {{ states('device_tracker.xpeng_xpeng_location') }}
+      attributes:
+        latitude: >
+          {{ state_attr('device_tracker.xpeng_xpeng_location', 'latitude') or states('device_tracker.xpeng_xpeng_location').split(',')[0] | float }}
+        longitude: >
+          {{ state_attr('device_tracker.xpeng_xpeng_location', 'longitude') or states('device_tracker.xpeng_xpeng_location').split(',')[1] | float }}
+        source_type: gps
+        friendly_name: "Xpeng"
+        icon: "mdi:car-electric"
 
 
 ## Prerequisites
