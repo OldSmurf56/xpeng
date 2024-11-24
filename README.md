@@ -8,7 +8,8 @@ Also note that the cars' position is only updated when the car is switched off a
 ### Show car location on map
 In order to show the current position of the car on a map you have to create a formatted device tracker in your configuration.yaml. After reloading yaml the new device_tracker can be used to show the car's position.
 Add the following code (all variables names are the ones from the NodeRed code):
-''' configuration.yaml
+
+```
 template:
 - sensor:
     - name: "Xpeng Location Formatted"
@@ -23,7 +24,7 @@ template:
         source_type: gps
         friendly_name: "Xpeng"
         icon: "mdi:car-electric"
-'''
+```
 
 ## Prerequisites
 
