@@ -60,6 +60,7 @@ Alternatively these Curl commands can also be run from Home Asistant from Termin
 ### Home Assistant
 
 My solution relies on a Home Assistant installation with both MQTT and Node Red, so ensure that you have both installed and configured.
+Remember to update the NodeRed code to point to your local MQTT broker information. My code assumes Localhost which points to my broker's IP, username and password.
 
 ## Next steps
 
