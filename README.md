@@ -55,6 +55,10 @@ Alternatively these Curl commands can also be run from Home Asistant from Termin
    -d "{ \"vendorType\": \"vehicle\", \"scopes\": [\"vehicle:read:data\", \"vehicle:read:location\", \"vehicle:control:charging\"], \"language\": \"en-US\", \"redirectUri\": \"https://localhost:3000\" }"
 
    The above is one command! The ^ at the end of each line simply instructs the command prompt to continue input. Enode.com will reply with a link to a landing page that you can click on. The landing page will prompt you to authorize your car being added to this client. You will need your Xpeng user name and password for this!
+   
+   If the above command doesn't give the desired result, @frankyman88 has a slightly modified version (see details in Issues section) - give it a shot if needed:
+   
+   curl "https://enode-api.production.enode.io/users/YOUR_CLIENT_ID/link" ^ -X POST ^ -H "Authorization: Bearer YOUR_ACCESS_TOKEN" ^ -H "Content-Type: application/json" ^ -d "{\"vendorType\":\"vehicle\",\"scopes\":[\"vehicle:read:data\",\"vehicle:read:location\",\"vehicle:control:charging\"],\"language\":\"en-US\",\"redirectUri\":\"https://localhost:3000\"}"
 
 
 ### Home Assistant
@@ -68,6 +72,8 @@ After having done all the initial setup steps and verified that you are able to 
 
 # Changelog
 V2: Removed QoS and Retain settings in MQTT publish
+
+V3: Added a slightly altered curl command for step 4. Thanks to @frankyman88
 
 
 
